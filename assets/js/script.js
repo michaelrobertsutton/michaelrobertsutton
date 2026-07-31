@@ -168,22 +168,6 @@
     updateScrollUI();
   }
 
-  // ---------- Work entries — expand/collapse all together (desktop only) ----------
-  var suppressGroupToggle = false;
-  var workDetails = document.querySelectorAll('.work-detail');
-  if (workDetails.length > 1) {
-    workDetails.forEach(function (det) {
-      det.addEventListener('toggle', function () {
-        if (suppressGroupToggle) return;
-        if (window.innerWidth < 768) return;
-        var isOpen = det.open;
-        workDetails.forEach(function (other) {
-          if (other !== det) other.open = isOpen;
-        });
-      });
-    });
-  }
-
   // ---------- Hash Deep Links (open the matching work case on load / hashchange) ----------
   function openWorkDetailFromHash() {
     var hash = window.location.hash.slice(1);
@@ -191,16 +175,7 @@
     var target = document.getElementById(hash);
     if (!target || !target.classList.contains('work-detail')) return;
 
-    if (!target.open) {
-      suppressGroupToggle = true;
-      target.open = true;
-      // The 'toggle' event fires as a queued task, not synchronously —
-      // clear the flag in a task scheduled after this one so it's still
-      // set when that handler runs, then reverts to normal afterward.
-      setTimeout(function () {
-        suppressGroupToggle = false;
-      }, 0);
-    }
+    target.open = true;
 
     var headerOffset = (header ? header.offsetHeight : 0) + 16;
     var targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
