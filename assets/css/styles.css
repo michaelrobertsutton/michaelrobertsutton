@@ -835,10 +835,8 @@ h1 {
 .focus-callout {
   display: grid;
   gap: var(--space-3);
-  border: 1px solid var(--color-warm);
-  border-radius: 0.65rem;
-  padding: var(--space-5);
-  background: var(--color-warm-glow);
+  border-left: 2px solid var(--color-warm);
+  padding: var(--space-2) 0 var(--space-2) var(--space-5);
 }
 
 /* ---- Lead bar / chips ---- */
@@ -1107,30 +1105,13 @@ h1 {
 /* ---- About — pullquote ---- */
 .about-pullquote {
   margin: 0;
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-2) 0 var(--space-2) var(--space-5);
   border-left: 3px solid var(--color-accent);
-  background: var(--color-accent-glow);
-  border-radius: 0 0.45rem 0.45rem 0;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-style: italic;
   line-height: 1.65;
   color: var(--color-ink);
-  position: relative;
   max-width: 60ch;
-}
-
-.about-pullquote::before {
-  content: '\201C';
-  position: absolute;
-  top: -0.5rem;
-  left: var(--space-4);
-  font-size: 3.5rem;
-  line-height: 1;
-  color: var(--color-accent);
-  font-style: normal;
-  font-weight: 700;
-  opacity: 0.5;
-  pointer-events: none;
 }
 
 /* ---- About — two-column layout ---- */
@@ -1165,13 +1146,8 @@ h1 {
   grid-template-columns: 2.2rem 1fr;
   gap: var(--space-3);
   align-items: start;
-  padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--color-line);
+  padding: var(--space-3) 0;
   max-width: none;
-}
-
-.principle-item:first-child {
-  border-top: 1px solid var(--color-line);
 }
 
 .principle-num {
