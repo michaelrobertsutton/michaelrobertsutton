@@ -8,26 +8,26 @@
   <meta name="keywords" content="Solutions Architect CMS, Federal Program Manager Maryland, GovCon Technical Volume Lead, CMS Modernization, Medicare Claims Data, Federal Health Modernization">
   <meta name="author" content="Michael Sutton">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#35393C">
+  <meta name="theme-color" content="#09294A">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Michael Sutton">
   <meta property="og:title" content="Michael Sutton — Federal health decisions, made executable">
   <meta property="og:description" content="Builds and runs the software behind federal health decisions.">
   <meta property="og:url" content="https://michaelrobertsutton.com/">
-  <meta property="og:image" content="https://michaelrobertsutton.com/assets/img/og-card.png">
+  <meta property="og:image" content="https://michaelrobertsutton.com/assets/img/og-card.png?v=20260731">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Michael Sutton — Federal health decisions, made executable">
   <meta name="twitter:description" content="Builds and runs the software behind federal health decisions.">
-  <meta name="twitter:image" content="https://michaelrobertsutton.com/assets/img/og-card.png">
+  <meta name="twitter:image" content="https://michaelrobertsutton.com/assets/img/og-card.png?v=20260731">
 
   <link rel="canonical" href="https://michaelrobertsutton.com/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260731">
   <noscript>
     <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
   </noscript>
@@ -39,17 +39,33 @@
     "name": "Michael Sutton",
     "url": "https://michaelrobertsutton.com/",
     "email": "mailto:contact@michaelrobertsutton.com",
-    "jobTitle": "Solutions Architect and Technical Program Manager",
+    "jobTitle": "Solutions Architect",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Columbia",
-      "addressRegion": "MD",
+      "addressLocality": "Washington",
+      "addressRegion": "DC",
       "addressCountry": "US"
     },
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
         "name": "AWS Certified AI Practitioner"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Project Management Professional (PMP)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "SAFe Agilist"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certified ScrumMaster"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certified HL7 FHIR Foundational Implementer"
       }
     ],
     "sameAs": [
@@ -133,7 +149,7 @@
       <div class="container">
         <div class="hero-masthead">
           <span class="hero-masthead-rule" aria-hidden="true"></span>
-          <span class="hero-masthead-meta">Columbia, MD &mdash; Federal Health</span>
+          <span class="hero-masthead-meta">Washington, DC area &mdash; Federal Health</span>
         </div>
         <div class="hero-display">
           <h1 class="hero-display-headline">Federal health programs run on decisions.<em class="hero-display-em"> I make the hard ones executable.</em></h1>
@@ -150,12 +166,21 @@
           </figure>
         </div>
         <div class="hero-display-footer">
-          <p class="hero-display-title">Solutions Architect &amp; Technical Program Manager &mdash; 18+ years in federal health</p>
+          <p class="hero-display-title">Solutions Architect &mdash; 18 years in federal health, 15 inside CMS. I architect the programs and ship the AI systems myself.</p>
           <div class="hero-display-actions">
-            <a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Resume</a>
+            <a href="documents/Sutton_Michael_Resume.pdf?v=20260731" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Resume</a>
             <a href="mailto:contact@michaelrobertsutton.com?subject=Website%20inquiry" class="btn btn-secondary">Email</a>
             <a href="https://www.linkedin.com/in/michaelrobertsutton/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
           </div>
+        </div>
+        <div class="builds-strip reveal" aria-label="Selected builds">
+          <p class="builds-label">Selected builds</p>
+          <ul class="builds-list">
+            <li class="builds-item"><a href="https://github.com/Bellese/Lenny" target="_blank" rel="noopener noreferrer" class="text-link">An open-source FHIR quality-measure platform</a> &mdash; solo full-stack build; 600+ integration tests running nightly in CI.</li>
+            <li class="builds-item"><a href="https://github.com/michaelrobertsutton/verified-googledocs-mcp" target="_blank" rel="noopener noreferrer" class="text-link">A published MCP server for Google Docs</a> &mdash; 19 tools whose mutating operations run a verified-write contract, so an agent cannot silently corrupt a document. 640 tests.</li>
+            <li class="builds-item"><strong>An EHR-integrated Medicare enrollment prototype</strong> &mdash; SMART on FHIR and OAuth 2.0, built to let clinicians submit PECOS applications from inside the EHR workflow; designed to cut enrollment from hours to minutes.</li>
+            <li class="builds-item"><strong>An internal AI platform that automated a federal proposal process</strong> &mdash; 38 codified workflows; reported ~20% cycle-time reduction.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -171,7 +196,7 @@
             <p>That perspective keeps my work practical and mission-focused &mdash; clear decisions, accountable execution, and systems teams can run long after launch.</p>
             <aside class="focus-callout reveal" aria-label="Current focus">
               <h3>Current focus</h3>
-              <p>I'm applying GenAI and policy-as-code patterns to federal compliance workflows, so teams can move from regulatory language to implementation-ready artifacts faster and with clearer traceability. That work includes RAG design and is informed by my AWS Certified AI Practitioner credential.</p>
+              <p>I'm applying GenAI and policy-as-code patterns to federal compliance workflows, so teams can move from regulatory language to implementation-ready artifacts faster and with clearer traceability. That isn't a research interest &mdash; it's what I build: retrieval pipelines, agent orchestration, and a published MCP server that enforces verified writes so an agent can't silently corrupt a system of record.</p>
             </aside>
           </div>
           <div class="about-principles reveal">
@@ -210,7 +235,7 @@
         <p class="proof-flip-intro">Most people in this space do one of these. Here are three that show all of it.</p>
         <div class="proof-flip-strip">
           <div class="proof-flip-item">
-            <span class="proof-flip-figure">$135M+</span>
+            <span class="proof-flip-figure">$200M+</span>
             <span class="proof-flip-caption">in federal wins</span>
           </div>
           <div class="proof-flip-item">
@@ -218,11 +243,11 @@
             <span class="proof-flip-caption">service availability<br>in CMS production</span>
           </div>
           <div class="proof-flip-item">
-            <span class="proof-flip-figure">20%</span>
-            <span class="proof-flip-caption">cycle-time reduction<br>via RAG proposal tooling</span>
+            <span class="proof-flip-figure">80%</span>
+            <span class="proof-flip-caption">increase in HealthCare.gov<br>enrollment conversions</span>
           </div>
         </div>
-        <p class="proof-flip-source"><a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="proof-flip-link">Sources: Resume PDF</a> &mdash; references available on request.</p>
+        <p class="proof-flip-source"><a href="documents/Sutton_Michael_Resume.pdf?v=20260731" target="_blank" rel="noopener noreferrer" class="proof-flip-link">Sources: Resume PDF</a> &mdash; references available on request.</p>
       </div>
     </section>
 
@@ -230,34 +255,30 @@
     <section id="work" class="section section--alt">
       <div class="container prose-block">
         <h2 class="reveal">Work</h2>
-        <p class="intro">Three programs in CMS Modernization and Medicare Claims Data delivery.</p>
+        <p class="intro">Four programs across federal health delivery, CMS modernization, and Medicare claims data.</p>
 
         <div class="work-list">
           <article class="work-entry reveal">
             <span class="work-bg-num" aria-hidden="true">01</span>
             <span class="work-num" aria-hidden="true">01</span>
             <div class="work-body">
-              <h3>Beneficiary Claims Data API (Blue Button 2.0)</h3>
+              <h3>Beneficiary Claims Data API (BCDA)</h3>
               <p class="work-outcome"><strong>Award-winning API delivery and first federal Bulk FHIR implementation.</strong></p>
               <div class="work-scale" aria-label="Program scale">
                 <span class="scale-badge">$16M program</span>
                 <span class="scale-badge">25+ FTE</span>
               </div>
-              <details id="work-blue-button-2" class="work-detail">
-                <summary>Blue Button 2.0 case details</summary>
+              <details id="work-bcda" class="work-detail">
+                <summary>BCDA case details</summary>
                 <div class="work-detail-body">
                   <h4>Problem</h4>
-                  <p>Medicare claims data needed a modern, scalable interface that could support beneficiary access and external application use. The delivery had to meet federal security and reliability expectations.</p>
+                  <p>Accountable Care Organizations needed population-level Medicare claims data to manage care for their assigned beneficiaries. The available path returned one patient at a time, which does not scale to a population. Delivery had to meet federal security and reliability expectations.</p>
                   <h4>My role</h4>
                   <p>Technical Program Manager leading a 25+ full-time equivalent (FTE) team on a $16M effort.</p>
                   <h4>Outcomes</h4>
                   <ul class="compact-list">
                     <li>Delivered an award-winning Beneficiary Claims Data API program.</li>
                     <li>Established the first federal Bulk FHIR implementation.</li>
-                  </ul>
-                  <h4>Artifacts</h4>
-                  <ul class="compact-list artifact-list">
-                    <li><a href="documents/artifacts/sanitized-decision-brief-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized decision brief template (Markdown)</a></li>
                   </ul>
                 </div>
               </details>
@@ -268,9 +289,9 @@
             <span class="work-num" aria-hidden="true">02</span>
             <div class="work-body">
               <h3>CMS modernization solution architecture</h3>
-              <p class="work-outcome"><strong>$135M+ in wins, with win-rate growth from 20% to 33%.</strong></p>
+              <p class="work-outcome"><strong>$200M+ in wins, with win-rate growth from 20% to 33%.</strong></p>
               <div class="work-scale" aria-label="Program scale">
-                <span class="scale-badge">$135M+ in wins</span>
+                <span class="scale-badge">$200M+ in wins</span>
                 <span class="scale-badge">6 proposals</span>
               </div>
               <details id="work-cms-solutioning" class="work-detail">
@@ -282,12 +303,8 @@
                   <p>Solutions Architect leading technical volume development and prototype direction.</p>
                   <h4>Outcomes</h4>
                   <ul class="compact-list">
-                    <li>Supported $135M+ in wins across six federal proposals.</li>
+                    <li>Supported $200M+ in wins across six federal proposals.</li>
                     <li>Improved team win rate from 20% to 33%.</li>
-                  </ul>
-                  <h4>Artifacts</h4>
-                  <ul class="compact-list artifact-list">
-                    <li><a href="documents/artifacts/sanitized-decision-brief-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized decision brief template (Markdown)</a></li>
                   </ul>
                 </div>
               </details>
@@ -298,7 +315,7 @@
             <span class="work-num" aria-hidden="true">03</span>
             <div class="work-body">
               <h3>Quality Payment Program delivery</h3>
-              <p class="work-outcome"><strong>99.99% availability with 91% participation in a CMS production environment.</strong></p>
+              <p class="work-outcome"><strong>99.99% availability with 91% provider participation in the Quality Payment Program.</strong></p>
               <div class="work-scale" aria-label="Program scale">
                 <span class="scale-badge">$45M program</span>
                 <span class="scale-badge">50+ FTE</span>
@@ -313,11 +330,33 @@
                   <h4>Outcomes</h4>
                   <ul class="compact-list">
                     <li>Achieved 99.99% availability for program services.</li>
-                    <li>Reached 91% participation.</li>
+                    <li>Reached 91% provider participation in the Quality Payment Program.</li>
                   </ul>
-                  <h4>Artifacts</h4>
-                  <ul class="compact-list artifact-list">
-                    <li><a href="documents/artifacts/sanitized-delivery-risk-register-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized delivery risk register template (Markdown)</a></li>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article class="work-entry reveal">
+            <span class="work-bg-num" aria-hidden="true">04</span>
+            <span class="work-num" aria-hidden="true">04</span>
+            <div class="work-body">
+              <h3>HealthCare.gov premium estimator</h3>
+              <p class="work-outcome"><strong>An ~80% increase in HealthCare.gov enrollment conversions.</strong></p>
+              <div class="work-scale" aria-label="Program scale">
+                <span class="scale-badge">Aquilent</span>
+                <span class="scale-badge">HealthCare.gov</span>
+              </div>
+              <details id="work-healthcare-gov" class="work-detail">
+                <summary>HealthCare.gov premium estimator case details</summary>
+                <div class="work-detail-body">
+                  <h4>Problem</h4>
+                  <p>Shoppers on the federal Health Insurance Marketplace needed a way to estimate premiums and subsidies before starting a full application, so they could compare plans and gauge affordability early in the process.</p>
+                  <h4>My role</h4>
+                  <p>Built the premium estimation ("window shopping") tool at Aquilent, translating marketplace plan and subsidy data into a real-time, pre-application estimate.</p>
+                  <h4>Outcomes</h4>
+                  <ul class="compact-list">
+                    <li>Drove an ~80% increase in enrollment conversions on HealthCare.gov.</li>
+                    <li>Helped more people successfully enroll in coverage by removing friction earlier in the shopping journey.</li>
                   </ul>
                 </div>
               </details>
@@ -330,7 +369,7 @@
     <!-- Speaking -->
     <section id="speaking" class="section">
       <div class="container prose-block">
-        <h2 class="reveal">Speaking &amp; thought leadership</h2>
+        <h2 class="reveal">Topics I speak on.</h2>
         <p class="intro">For federal technology audiences, delivery teams, and partner forums.</p>
         <div class="speaking-program reveal">
           <div class="speaking-program-item">
@@ -383,6 +422,7 @@
           <a href="https://www.linkedin.com/in/michaelrobertsutton/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
         </div>
         <p><a href="mailto:contact@michaelrobertsutton.com" class="text-link">contact@michaelrobertsutton.com</a></p>
+        <p>Want a colleague's perspective first? <a href="https://www.linkedin.com/in/michaelrobertsutton/details/recommendations/" target="_blank" rel="noopener noreferrer" class="text-link">Read recommendations on LinkedIn</a>.</p>
       </div>
     </section>
 
@@ -392,8 +432,8 @@
         <h2 class="reveal">Resume</h2>
         <p class="intro">Full experience, certifications, and role history.</p>
         <div class="hero-display-actions">
-          <a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View resume PDF</a>
-          <a href="documents/Sutton_Michael_Resume.pdf" download class="btn btn-secondary">Download</a>
+          <a href="documents/Sutton_Michael_Resume.pdf?v=20260731" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View resume PDF</a>
+          <a href="documents/Sutton_Michael_Resume.pdf?v=20260731" download class="btn btn-secondary">Download</a>
         </div>
       </div>
     </section>
@@ -421,6 +461,6 @@
     </div>
   </div>
 
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js?v=20260731"></script>
 </body>
 </html>
