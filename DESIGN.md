@@ -8,7 +8,7 @@
 
 ## Aesthetic Direction
 - **Direction:** Editorial/Magazine
-- **Decoration level:** Intentional (accent bars on h2, glow backgrounds on callouts, diagonal clip-path on proof section)
+- **Decoration level:** Intentional (accent bars on h2, thin left rules on pull quotes and callouts, diagonal clip-path on proof section)
 - **Mood:** Authoritative and precise, like a well-designed feature article. Not flashy, not generic. The site should feel like something a person with taste built, not configured.
 - **Key pattern:** The hero reads like a magazine cover. Sections are ruled and typographically driven. Whitespace does the heavy lifting.
 
@@ -141,3 +141,4 @@ Restrained: 1 primary accent + 1 warm secondary accent + a deep, cool-toned neut
 | 2026-03-28 | Initial design system documented | Created by /design-consultation. Extracted from existing styles.css. |
 | 2026-04-05 | "Prussian Night" dark palette shipped (#09294A bg, #F4D35E gold accent, #EE964B warm) | Replaced charcoal+icy-blue. Editorial navy ground reads richer and differentiates; gold carries the accent role. Doc synced 2026-07-31. |
 | 2026-07-31 | Light theme deliberately retained as grey+blue | Migration to navy/gold light mode was proposed and explicitly declined. Two palettes by theme is accepted. |
+| 2026-07-31 | About-section callouts de-boxed | Pull quote and Current focus use thin left rules instead of glow-fill boxes; principles separated by whitespace, not rules. Mike flagged the boxed version as busy. Whitespace does the heavy lifting. |
