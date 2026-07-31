@@ -1,0 +1,29 @@
+# Files present in the repo that must NOT be published to the web.
+#
+# On S3 this was enforced by --exclude flags in deploy.sh. Vercel deploys the
+# repo as-is, so that protection has to be restated here or it disappears with
+# deploy.sh. Verified 2026-07-31: /DESIGN.md returned HTTP 200 on both the S3
+# site and the Vercel preview before this file existed.
+
+# Internal strategy docs. Also gitignored, so they should never reach a
+# deployment anyway. Kept here as defense-in-depth: if docs/ is ever removed
+# from .gitignore, this still prevents publication.
+docs/
+
+# Repo and agent documentation
+CLAUDE.md
+DESIGN.md
+README.md
+.claude/
+.gstack/
+.worktrees/
+
+# Legacy deploy tooling (removed after the AWS decommission completes)
+deploy.sh
+
+# Local backups, should never be committed but belt-and-braces
+s3-backup/
+archive-backup/
+
+# NOTE: documents/artifacts/*.md are intentionally NOT ignored. They are linked
+# from index.html and are meant to be public.
