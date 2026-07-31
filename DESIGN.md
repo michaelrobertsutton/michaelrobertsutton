@@ -1,7 +1,7 @@
 # Design System — michaelrobertsutton.com
 
 ## Product Context
-- **What this is:** Personal portfolio site for a Solutions Architect & Technical Program Manager
+- **What this is:** Personal portfolio site for a Solutions Architect
 - **Who it's for:** GovCon BD directors, recruiters, federal health peers, referral network
 - **Space/industry:** Federal health tech, GovCon, CMS modernization
 - **Project type:** Marketing/editorial personal portfolio
@@ -33,24 +33,24 @@
 ## Color
 
 ### Approach
-Restrained: 1 cool accent (icy blue) + 1 warm accent (amber gold) + cool-toned neutrals. Color is used sparingly and with purpose. The warm accent creates temperature contrast that most portfolio sites lack.
+Restrained: 1 primary accent + 1 warm secondary accent + a deep, cool-toned neutral base. Color is used sparingly and with purpose. The cool icy-blue primary accent is retired in dark mode: dark mode is now a deep prussian-navy ground (#09294A) with a gold primary accent (#F4D35E) and a warm orange secondary accent (#EE964B). Light mode intentionally remains the original grey+blue system. The warm accent creates temperature contrast that most portfolio sites lack.
 
 ### Core Tokens
 | Token | Dark Mode | Light Mode | Usage |
 |-------|-----------|------------|-------|
-| `--color-bg` | #35393C | #F5F7FA | Page background |
-| `--color-surface` | #3E4347 | #FFFFFF | Cards, nav, alt sections |
-| `--color-surface-2` | #464B50 | #EDF0F4 | Hover states, secondary surfaces |
-| `--color-line` | rgba(255,255,255,0.10) | rgba(0,0,0,0.10) | Borders, dividers |
-| `--color-ink` | #F0F2F4 | #1A1E22 | Primary text |
-| `--color-ink-muted` | #9BA3AB | #5A6270 | Secondary text, captions |
-| `--color-accent` | #A4D8FF | #2B8FCC | Primary accent (icy blue) |
-| `--color-accent-dark` | #7CC0F0 | #1E6FA0 | Links, hover accent |
-| `--color-accent-glow` | rgba(164,216,255,0.15) | rgba(43,143,204,0.12) | Focus rings, glow backgrounds |
-| `--color-btn-text` | #35393C | #FFFFFF | Text on accent-background buttons |
-| `--color-warm` | #C9A460 | #9A7A35 | Secondary accent (amber gold) |
-| `--color-warm-glow` | rgba(201,164,96,0.12) | rgba(154,122,53,0.10) | Warm accent glow backgrounds |
-| `--header-bg` | rgba(53,57,60,0.92) | rgba(245,247,250,0.92) | Sticky header with blur |
+| `--color-bg` | #09294A | #F5F7FA | Page background |
+| `--color-surface` | #0D3B66 | #FFFFFF | Cards, nav, alt sections |
+| `--color-surface-2` | #1A4A7A | #EDF0F4 | Hover states, secondary surfaces |
+| `--color-line` | rgba(244,211,94,0.12) | rgba(0,0,0,0.10) | Borders, dividers |
+| `--color-ink` | #F0F4FF | #1A1E22 | Primary text |
+| `--color-ink-muted` | #8098B8 | #5A6270 | Secondary text, captions |
+| `--color-accent` | #F4D35E | #2B8FCC | Primary accent (gold in dark mode, blue in light mode) |
+| `--color-accent-dark` | #D4B33E | #1E6FA0 | Links, hover accent |
+| `--color-accent-glow` | rgba(244,211,94,0.15) | rgba(43,143,204,0.12) | Focus rings, glow backgrounds |
+| `--color-btn-text` | #09294A | #FFFFFF | Text on accent-background buttons |
+| `--color-warm` | #EE964B | #9A7A35 | Secondary accent (orange in dark mode, amber in light mode) |
+| `--color-warm-glow` | rgba(238,150,75,0.12) | rgba(154,122,53,0.10) | Warm accent glow backgrounds |
+| `--header-bg` | rgba(9,41,74,0.92) | rgba(245,247,250,0.92) | Sticky header with blur |
 
 ### Semantic Colors (dark mode values, reduce saturation ~15% for light)
 | Token | Value | Usage |
@@ -58,7 +58,7 @@ Restrained: 1 cool accent (icy blue) + 1 warm accent (amber gold) + cool-toned n
 | Success | #6FCF97 | Positive states |
 | Warning | #F2C94C | Caution states |
 | Error | #EB5757 | Error states |
-| Info | #A4D8FF | Informational (shares accent) |
+| Info | #F4D35E | Informational (shares accent) |
 
 ### Color Rules
 - Warm accent: max 1-2 elements per section. Restraint is the point.
@@ -139,3 +139,5 @@ Restrained: 1 cool accent (icy blue) + 1 warm accent (amber gold) + cool-toned n
 | 2026-03-28 | Proof section color-flip | Full icy-blue background breaks visual rhythm intentionally. Creates the most memorable moment on the page. |
 | 2026-03-28 | Editorial/magazine aesthetic | Matches the "I make the hard ones executable" thesis. The site itself demonstrates clear, structured thinking. |
 | 2026-03-28 | Initial design system documented | Created by /design-consultation. Extracted from existing styles.css. |
+| 2026-04-05 | "Prussian Night" dark palette shipped (#09294A bg, #F4D35E gold accent, #EE964B warm) | Replaced charcoal+icy-blue. Editorial navy ground reads richer and differentiates; gold carries the accent role. Doc synced 2026-07-31. |
+| 2026-07-31 | Light theme deliberately retained as grey+blue | Migration to navy/gold light mode was proposed and explicitly declined. Two palettes by theme is accepted. |

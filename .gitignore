@@ -5,3 +5,7 @@ Thumbs.db
 *.log
 .gstack/
 .worktrees/
+
+# Internal strategy docs — never commit. DEVELOPMENT.md is the one tracked exception.
+docs/*
+!docs/DEVELOPMENT.md

@@ -20,6 +20,8 @@ aws s3 sync . "s3://$BUCKET" \
   --exclude "deploy.sh" \
   --exclude ".gitignore" \
   --exclude "archive/*" \
+  --exclude "DESIGN.md" \
+  --exclude "docs/*" \
   --cache-control "max-age=86400" \
   --metadata-directive REPLACE
 
