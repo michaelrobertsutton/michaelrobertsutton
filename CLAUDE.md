@@ -4,13 +4,30 @@ Static HTML portfolio site. No build step required.
 
 ## Deploying to Production
 
-When the user says "deploy", "push to production", "ship it", or similar — run:
+When the user says "deploy", "push to production", "ship it", or similar — commit and
+push to `main`. Vercel is git-connected and deploys automatically. There is no build step.
 
-```
-./deploy.sh
-```
+To roll back a bad deploy, promote the previous deployment in the Vercel dashboard.
+Do not `git revert` for this — promoting is instant and does not touch history.
 
-This syncs all site files to S3 (`michaelrobertsutton.com`) and invalidates the CloudFront cache. Uses the `personal` AWS CLI profile. Requires `CLOUDFRONT_DISTRIBUTION_ID` set in your shell environment (`~/.zshrc`).
+Hosting moved off S3 + CloudFront to Vercel on 2026-08-01. `deploy.sh` was deleted in
+the same change: the CloudFront distribution and the Route 53 hosted zone no longer
+exist, so the script could only have synced to an orphaned bucket and then failed.
+
+Two files carry the deploy contract. Keep them in sync if paths move:
+
+- **`.vercelignore`** — Vercel publishes the repo as-is, so anything not listed here
+  becomes a public URL. It replaces the `--exclude` flags `deploy.sh` used to carry.
+  `docs/` matters most: `docs/positioning-recommendations-*.md` is marked
+  "Not for publication." Note `documents/artifacts/*.md` are deliberately NOT ignored.
+- **`vercel.json`** — security headers and cache policy. Cache lifetimes on
+  `assets/css` and `assets/js` are deliberately short (1h + stale-while-revalidate)
+  rather than the year-long `max-age` the old S3 deploy set. Those filenames are not
+  content-hashed and Vercel has no invalidation step, so a long browser cache would
+  strand visitors on stale CSS.
+
+The S3 bucket `michaelrobertsutton.com` is retained until ~2026-08-08 as a rollback
+copy, then deleted. It serves no traffic.
 
 ## Design System
 Always read DESIGN.md before making any visual or UI decisions.
