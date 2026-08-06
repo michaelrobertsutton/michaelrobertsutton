@@ -4,10 +4,11 @@
  */
 
 // ---------- Theme Toggle ----------
+var THEMES = ['dark','light','violet-tempest','celestial-purple','neon-petal','azure','raspberry','dusk','electric-tundra','cool-horizon','ink-press','tropical-reef','coastal-dusk','amethyst-storm','bubblegum','pure-gold','prussian-night'];
 (function() {
   var savedTheme = localStorage.getItem('theme');
   var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+  var theme = (savedTheme && THEMES.includes(savedTheme)) ? savedTheme : (prefersDark ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', theme);
 })();
 
@@ -27,19 +28,70 @@
   // ---------- Theme Toggle ----------
   if (themeToggle) {
     function updateThemeLabel(theme) {
-      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.setAttribute('aria-label', 'Switch theme (' + theme + ')');
+      document.querySelectorAll('.theme-picker__swatch').forEach(function(s) {
+        s.classList.toggle('is-active', s.title === theme);
+      });
     }
 
     updateThemeLabel(document.documentElement.getAttribute('data-theme') || 'dark');
 
     themeToggle.addEventListener('click', function() {
       var current = document.documentElement.getAttribute('data-theme') || 'dark';
-      var next = current === 'dark' ? 'light' : 'dark';
+      var idx = THEMES.indexOf(current);
+      var next = THEMES[(idx + 1) % THEMES.length];
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       updateThemeLabel(next);
     });
   }
+
+  // ---- Theme Picker Panel (dev preview) ----
+  (function() {
+    var SWATCH_COLORS = {
+      'dark':            '#35393C',
+      'light':           '#F5F7FA',
+      'violet-tempest':  '#14135A',
+      'celestial-purple':'#1A0A30',
+      'neon-petal':      '#1A0A12',
+      'azure':           '#E8F4FD',
+      'raspberry':       '#012641',
+      'dusk':            '#293241',
+      'electric-tundra': '#050A30',
+      'cool-horizon':    '#FFEDD5',
+      'ink-press':       '#E8DFCE',
+      'tropical-reef':   '#003D5C',
+      'coastal-dusk':    '#003350',
+      'amethyst-storm':  '#1A0033',
+      'bubblegum':       '#E8F6FA',
+      'pure-gold':       '#2A1510',
+      'prussian-night':  '#09294A'
+    };
+
+    var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    var picker = document.createElement('div');
+    picker.className = 'theme-picker';
+
+    THEMES.forEach(function(t) {
+      var swatch = document.createElement('button');
+      swatch.className = 'theme-picker__swatch' + (t === currentTheme ? ' is-active' : '');
+      swatch.title = t;
+      swatch.style.background = SWATCH_COLORS[t];
+      swatch.setAttribute('aria-label', 'Switch to ' + t + ' theme');
+      swatch.addEventListener('click', function() {
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+        document.querySelectorAll('.theme-picker__swatch').forEach(function(s) {
+          s.classList.toggle('is-active', s.title === t);
+        });
+      });
+      picker.appendChild(swatch);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.appendChild(picker);
+    });
+  })();
 
   // ---------- Mobile Navigation (full-screen overlay) ----------
   function openMobileMenu() {
