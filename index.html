@@ -8,7 +8,19 @@
   <meta name="keywords" content="Solutions Architect CMS, Federal Program Manager Maryland, GovCon Technical Volume Lead, CMS Modernization, Medicare Claims Data, Federal Health Modernization">
   <meta name="author" content="Michael Sutton">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#09294A">
+  <meta name="theme-color" content="#0A0F16" id="theme-color">
+  <script>
+    // Set the theme before CSS paints, so a saved light theme never flashes dark.
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('theme-color').setAttribute('content', theme === 'dark' ? '#0A0F16' : '#FBFBF9');
+    })();
+  </script>
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Michael Sutton">
@@ -24,10 +36,7 @@
 
   <link rel="canonical" href="https://michaelrobertsutton.com/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260731">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261027">
   <noscript>
     <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
   </noscript>
@@ -84,7 +93,6 @@
   </script>
 </head>
 <body>
-  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="site-header" id="site-header">
@@ -116,16 +124,20 @@
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <div class="mobile-menu-inner">
-      <div class="mobile-menu-header">
-        <span class="mobile-menu-logo">Michael Sutton</span>
-        <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
+  <dialog class="sheet" id="mobile-menu" aria-label="Navigation menu">
+    <div class="sheet-scrim" data-sheet-dismiss></div>
+    <div class="sheet-panel">
+      <div class="sheet-handle" data-sheet-drag>
+        <span class="sheet-grabber" aria-hidden="true"></span>
+        <div class="sheet-header">
+          <span class="sheet-title">Michael Sutton</span>
+          <button type="button" class="sheet-close" id="mobile-menu-close" aria-label="Close menu" autofocus>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
       </div>
       <nav aria-label="Mobile navigation">
         <ul class="mobile-nav-list">
@@ -136,11 +148,11 @@
           <li><a href="#resume" class="mobile-nav-link">Resume</a></li>
         </ul>
       </nav>
-      <div class="mobile-menu-footer">
+      <div class="sheet-footer">
         <a href="mailto:contact@michaelrobertsutton.com" class="mobile-email">contact@michaelrobertsutton.com</a>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <main id="main-content">
 
@@ -259,7 +271,6 @@
 
         <div class="work-list">
           <article class="work-entry reveal">
-            <span class="work-bg-num" aria-hidden="true">01</span>
             <span class="work-num" aria-hidden="true">01</span>
             <div class="work-body">
               <h3>Beneficiary Claims Data API (BCDA)</h3>
@@ -270,22 +281,23 @@
               </div>
               <details id="work-bcda" class="work-detail">
                 <summary>BCDA case details</summary>
-                <div class="work-detail-body">
-                  <h4>Problem</h4>
-                  <p>Accountable Care Organizations needed population-level Medicare claims data to manage care for their assigned beneficiaries. The available path returned one patient at a time, which does not scale to a population. Delivery had to meet federal security and reliability expectations.</p>
-                  <h4>My role</h4>
-                  <p>Technical Program Manager leading a 25+ full-time equivalent (FTE) team on a $16M effort.</p>
-                  <h4>Outcomes</h4>
-                  <ul class="compact-list">
-                    <li>Delivered an award-winning Beneficiary Claims Data API program.</li>
-                    <li>Established the first federal Bulk FHIR implementation.</li>
-                  </ul>
+                <div class="work-detail-clip">
+                  <div class="work-detail-body">
+                    <h4>Problem</h4>
+                    <p>Accountable Care Organizations needed population-level Medicare claims data to manage care for their assigned beneficiaries. The available path returned one patient at a time, which does not scale to a population. Delivery had to meet federal security and reliability expectations.</p>
+                    <h4>My role</h4>
+                    <p>Technical Program Manager leading a 25+ full-time equivalent (FTE) team on a $16M effort.</p>
+                    <h4>Outcomes</h4>
+                    <ul class="compact-list">
+                      <li>Delivered an award-winning Beneficiary Claims Data API program.</li>
+                      <li>Established the first federal Bulk FHIR implementation.</li>
+                    </ul>
+                  </div>
                 </div>
               </details>
             </div>
           </article>
           <article class="work-entry reveal">
-            <span class="work-bg-num" aria-hidden="true">02</span>
             <span class="work-num" aria-hidden="true">02</span>
             <div class="work-body">
               <h3>CMS modernization solution architecture</h3>
@@ -296,22 +308,23 @@
               </div>
               <details id="work-cms-solutioning" class="work-detail">
                 <summary>CMS solution architecture case details</summary>
-                <div class="work-detail-body">
-                  <h4>Problem</h4>
-                  <p>Capture teams needed technically credible solution plans that could both win and survive the transition into delivery. Plans had to account for federal constraints early.</p>
-                  <h4>My role</h4>
-                  <p>Solutions Architect leading technical volume development and prototype direction.</p>
-                  <h4>Outcomes</h4>
-                  <ul class="compact-list">
-                    <li>Supported $200M+ in wins across six federal proposals.</li>
-                    <li>Improved team win rate from 20% to 33%.</li>
-                  </ul>
+                <div class="work-detail-clip">
+                  <div class="work-detail-body">
+                    <h4>Problem</h4>
+                    <p>Capture teams needed technically credible solution plans that could both win and survive the transition into delivery. Plans had to account for federal constraints early.</p>
+                    <h4>My role</h4>
+                    <p>Solutions Architect leading technical volume development and prototype direction.</p>
+                    <h4>Outcomes</h4>
+                    <ul class="compact-list">
+                      <li>Supported $200M+ in wins across six federal proposals.</li>
+                      <li>Improved team win rate from 20% to 33%.</li>
+                    </ul>
+                  </div>
                 </div>
               </details>
             </div>
           </article>
           <article class="work-entry reveal">
-            <span class="work-bg-num" aria-hidden="true">03</span>
             <span class="work-num" aria-hidden="true">03</span>
             <div class="work-body">
               <h3>Quality Payment Program delivery</h3>
@@ -322,22 +335,23 @@
               </div>
               <details id="work-qpp-delivery" class="work-detail">
                 <summary>Quality Payment Program case details</summary>
-                <div class="work-detail-body">
-                  <h4>Problem</h4>
-                  <p>A major CMS program required dependable cloud operations and API performance at enterprise scale. Delivery had to stay stable under continuous operational pressure.</p>
-                  <h4>My role</h4>
-                  <p>Technical Program Manager over a $45M program with 50+ FTEs.</p>
-                  <h4>Outcomes</h4>
-                  <ul class="compact-list">
-                    <li>Achieved 99.99% availability for program services.</li>
-                    <li>Reached 91% provider participation in the Quality Payment Program.</li>
-                  </ul>
+                <div class="work-detail-clip">
+                  <div class="work-detail-body">
+                    <h4>Problem</h4>
+                    <p>A major CMS program required dependable cloud operations and API performance at enterprise scale. Delivery had to stay stable under continuous operational pressure.</p>
+                    <h4>My role</h4>
+                    <p>Technical Program Manager over a $45M program with 50+ FTEs.</p>
+                    <h4>Outcomes</h4>
+                    <ul class="compact-list">
+                      <li>Achieved 99.99% availability for program services.</li>
+                      <li>Reached 91% provider participation in the Quality Payment Program.</li>
+                    </ul>
+                  </div>
                 </div>
               </details>
             </div>
           </article>
           <article class="work-entry reveal">
-            <span class="work-bg-num" aria-hidden="true">04</span>
             <span class="work-num" aria-hidden="true">04</span>
             <div class="work-body">
               <h3>HealthCare.gov premium estimator</h3>
@@ -348,16 +362,18 @@
               </div>
               <details id="work-healthcare-gov" class="work-detail">
                 <summary>HealthCare.gov premium estimator case details</summary>
-                <div class="work-detail-body">
-                  <h4>Problem</h4>
-                  <p>Shoppers on the federal Health Insurance Marketplace needed a way to estimate premiums and subsidies before starting a full application, so they could compare plans and gauge affordability early in the process.</p>
-                  <h4>My role</h4>
-                  <p>Built the premium estimation ("window shopping") tool, translating marketplace plan and subsidy data into a real-time, pre-application estimate.</p>
-                  <h4>Outcomes</h4>
-                  <ul class="compact-list">
-                    <li>Drove an ~80% increase in enrollment conversions on HealthCare.gov.</li>
-                    <li>Helped more people successfully enroll in coverage by removing friction earlier in the shopping journey.</li>
-                  </ul>
+                <div class="work-detail-clip">
+                  <div class="work-detail-body">
+                    <h4>Problem</h4>
+                    <p>Shoppers on the federal Health Insurance Marketplace needed a way to estimate premiums and subsidies before starting a full application, so they could compare plans and gauge affordability early in the process.</p>
+                    <h4>My role</h4>
+                    <p>Built the premium estimation ("window shopping") tool, translating marketplace plan and subsidy data into a real-time, pre-application estimate.</p>
+                    <h4>Outcomes</h4>
+                    <ul class="compact-list">
+                      <li>Drove an ~80% increase in enrollment conversions on HealthCare.gov.</li>
+                      <li>Helped more people successfully enroll in coverage by removing friction earlier in the shopping journey.</li>
+                    </ul>
+                  </div>
                 </div>
               </details>
             </div>
@@ -455,12 +471,12 @@
 
   <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">↑</a>
 
-  <div id="sticky-cta" class="sticky-cta" aria-hidden="true">
+  <div id="sticky-cta" class="sticky-cta" aria-hidden="true" inert>
     <div class="sticky-cta-inner">
       <a href="mailto:contact@michaelrobertsutton.com?subject=Website%20inquiry" class="btn btn-primary sticky-cta-btn">Email me</a>
     </div>
   </div>
 
-  <script src="assets/js/script.js?v=20260731"></script>
+  <script src="assets/js/script.js?v=20261027"></script>
 </body>
 </html>
